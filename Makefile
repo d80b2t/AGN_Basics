@@ -1,5 +1,5 @@
 
-TEXFILE=AGN_feedback_terminology
+TEXFILE=AGN_basics
 default: all
 
 # just run it
@@ -9,15 +9,15 @@ bib:
 	bibtex ${TEXFILE}
 
 all :
-	latex  ${TEXFILE}
-	latex  ${TEXFILE}
+	pdflatex  ${TEXFILE}
+	pdflatex  ${TEXFILE}
 	bibtex ${TEXFILE}
 	bibtex ${TEXFILE}
 	bibtex ${TEXFILE}
-	latex  ${TEXFILE}
-	latex  ${TEXFILE}
-	latex  ${TEXFILE}
-	dvipdf ${TEXFILE}
+	pdflatex  ${TEXFILE}
+	pdflatex  ${TEXFILE}
+	pdflatex  ${TEXFILE}
+#	dvipdf ${TEXFILE}
 	rm -f  ${TEXFILE}.aux
 	rm -f  ${TEXFILE}.bbl
 	rm -f  ${TEXFILE}.blg
