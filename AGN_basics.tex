@@ -11,9 +11,9 @@
 \begin{document}
 
 
-\title{Just a few (really) basic notes on AGN: \\
-From discussions with Andy L and David H.:}
-\author{Nicholas P. Ross}
+\title{Just a few really basic notes on AGN: \\
+From discussions with Andy L. and David H.}
+%\author{Nicholas P. Ross}
 \date{\today}
 \maketitle
 
@@ -25,35 +25,43 @@ From discussions with Andy L and David H.:}
 
 
 
-\section{Accretion Disk Basics}
-Classic References:\\
-\citet{SS73}\\
-\citet{Pringle81}\\
-\citet{Pringle81}\\
-\citet{Richards06b}\\
-\citet{Kishimoto08}\\
-\citet{Lawrence12}, and the paper trail therein...\\
+\section{Where's the energy coming from??}
+Note, very bright radio sources have flux densities of $\sim$a
+Jansky. An iPhone 6 has an RF output of $\approx$30 dBm (at 824.2 -
+848.8MHz and 1850.2 - 1909.8MHz) where a dBm is a decibel-milliwatt
+and 30dBm is 1.0 Watt\footnote{https://en.wikipedia.org/wiki/DBm}. So
+placing an iPhone on the Moon would give it a radio flux of...??
 
-Good links:
-Schwarzschild radius: https://en.wikipedia.org/wiki/Schwarzschild\_radius
-www-astro.physics.ox.ac.uk/$\sim$garret/teaching/lecture7-2012.pdf
-jila.colorado.edu/~pja/astr3730/lecture18.pdf
-
+\noindent
+The Schwarzschild radius is:
 \begin{equation}
      R_{\rm Sch} = \frac{2GM}{c^2}
 \end{equation}
-The Event Horizon is at 2 Schwarzschild radii !!!
+The Event Horizon is at 2 Schwarzschild radii!!!
 
-$L = 4\pi \sigma  R^2 T^4$. 
+\noindent
+How much of the energy is coming from various Schwarzschild radii??
+3-5 or 3-10 $R_{\rm Sch}$ vs. 5-$\infty$ $R_{\rm Sch}$??\\
+
+\noindent
+$L = 4\pi \sigma  R^2 T^4$, so...
 \begin{equation}
 T = (L c^4) / \sigma \pi G^{2} 
 \end{equation}
 
+\noindent
+Working this all through...
+\begin{equation}
+  L = 1.38\times10^{31} \, {\rm Watts} \, (M / M_{\odot})
+\end{equation}
 
+\noindent
+which with  $M_{\odot} = 2 \times 10^{30}$ kg is just 
 \begin{equation}
   L = 6.37 M. 
 \end{equation}
-WTF. 
+in S.I. units. 
+%% WTF!!! ;-)
 
 \begin{equation}
   \Delta E_{p} = \frac{G M m}{R} 
@@ -78,27 +86,42 @@ $\mu$ is 0.7\% for nuclear fusion. \\
 $\mu$ is 10-40\% for grav. potential accretion.  \\
 And, $L$ for BHs doesn't depend on the mass of the BH (!!) \\
 
+\noindent
 $L$ increases with \.m, upto the Eddington Luminosity. \\
 The luminosity itself cuts off itself the growth (in L). \\
 
+\noindent
+Use Wien's Displacement Law such that:\\
 $\lambda$  T = 2900 ($L$ in $\mu$m and T in K)\\
 $\Rightarrow$ if T = 100,000K then $\lambda=0.03\mu$m, \\
 i.e. and the EUV. \\
-12.6 eV is $\sim$1 keV
-Expect peak at $\sim300$\AA
+(Note, a photon with 12.6 eV of energy has a wavelenght of 100nm.)
+%% https://en.wikipedia.org/wiki/Electronvolt
+So, you can expect the peak to be at $\sim300$\AA. 
 
+\noindent
 However, we see the turnover at $\sim1000$\AA, 
 a little cooler than we'd expect... Why??!!
 
 
-%\begin{itemize}
-%\item 
-%\end{itemize} 
+
+\section{Resources}
+Classic References:\\
+\citet{SS73} (and \citet{King09}) \\
+\citet{Pringle81}\\
+(also e.g., \citet{Pringle72, Pringle73, Pringle96})\\
+\citet{Richards06b}\\
+\citet{Kishimoto08}\\
+\citet{Lawrence12}, and the paper trail therein...\\
+
+\noindent
+Good links:\\
+Schwarzschild radius: https://en.wikipedia.org/wiki/Schwarzschild\_radius\\
+www-astro.physics.ox.ac.uk/$\sim$garret/teaching/lecture7-2012.pdf\\
+jila.colorado.edu/~pja/astr3730/lecture18.pdf\\
+https://andyxl.wordpress.com/2011/03/03/a-dim-glimmer/\\
 
 
-
-\section{References}
-\citet{Ross07}
 
 \bibliographystyle{mn2e}
 \bibliography{/cos_pc19a_npr/LaTeX/tester_mnras}
