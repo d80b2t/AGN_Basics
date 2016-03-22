@@ -25,4 +25,10 @@ print "Stefan-Boltzmann-Schwarzschild-Hawking power law:"
 print "hbar. c^6  /  (15360 . pi . G^2 . M^2) which is "
 print hbar*(c**6)
 print 15360.*pi*G*G*M*M
-print (hbar*(c**6)) / ( 15360.*pi*G*G*M*M)
+P_rad = (hbar*(c**6)) / ( 15360.*pi*G*G*M*M)
+print "Hawking radiation of %0.4e W" %P_rad
+
+##Time before evaporation
+E_bh = M*c*c
+print "Total rest mass energy of black hole is %0.4e J" %E_bh
+print "Time before evaporation due to Hawking radiation is %0.4e s" %(E_bh/P_rad)

@@ -26,85 +26,145 @@ From discussions with Andy L. and David H.}
 
 
 \section{Where's the energy coming from??}
-Note, very bright radio sources have flux densities of $\sim$a
-Jansky. An iPhone 6 has an RF output of $\approx$30 dBm (at 824.2 -
-848.8MHz and 1850.2 - 1909.8MHz) where a dBm is a decibel-milliwatt
-and 30dBm is 1.0 Watt\footnote{https://en.wikipedia.org/wiki/DBm}. So
-placing an iPhone on the Moon would give it a radio flux of...??
+Quasars are visible across the EM spectrum, and the distribution of their energy output across the spectrum provides information about the type of processes fueling these sources. For example, the energy output in the radio frequency range is low, relative to the rest of the SED. For comparison: very bright radio sources have flux densities of $\sim$1 Jansky, whereas an iPhone 6 has an RF output of $\sim$30 dBm (at 824.2 - 848.8MHz and 1850.2 - 1909.8MHz) where a dBm is a decibel-milliwatt. This corresponds to a power of 1.0 Watt\footnote{https://en.wikipedia.org/wiki/DBm}. So placing an iPhone on the Moon would give it a radio flux (using an average distance $d \approx 3.85 \cdot 10^8$m and a total bandwidth of 82.2 MHz)  of:
+$$
+F = \frac{P}{4\pi d^2}\frac{1}{82.2\cdot 10^6} \approx 6.53 \cdot 10^{-27}\frac{\mathrm{W}}{\mathrm{m}^{2}\mathrm{Hz}} \approx 0.6 \mathrm{Jy}
+$$
+The spectral irradiance on Earth from this mobile phone would therefore be of the same order of magnitude as the brightest astronomical radio sources.\\
 
 \noindent
-The Schwarzschild radius is:
+Given the enormous energy output of AGN, the most likely source is accretion of matter unto a black hole, as this is the most efficient liberation of energy known to us. The following is a derivation of properties of the SED (most importantly the location of its peak), based on this assumption. In this approximation we will use a Schwarzschild geometry for the region around the black hole. Note there are two conventions in the literature for the basic radius: the Schwarzschild radius $ R_{\mathrm{Sch}} = \frac{2GM}{c^2}$ and the `gravitational radius', which is half of $R_{\mathrm{Sch}}$.\\
+\indent The first step is to locate the region where the radiation is coming from. Assuming the infalling matter will have some rotation, it will form an accretion disk around the black hole. Matter rotating around the black hole, for simple circular rotation, will have a minimum radius, defining the innermost stable circular orbit (ISCO). For the Schwarzschild metric $r_{\mathrm{ISCO}} = 3R_{\mathrm{Sch}}$ (derivation in box below).
+\begin{framed}
+\noindent
+(This derivation will follow that set out in e.g. Hartle (2003))\\
+\noindent
+The metric for the Schwarzschild geometry (parameters t, r, $\theta$ and $\phi$) in geometric units:
 \begin{equation}
-     R_{\rm Sch} = \frac{2GM}{c^2}
+	g_{\alpha\beta} = 
+		\begin{pmatrix}
+			(1-\frac{2M}{r}) & 0 & 0 & 0 \\
+			0 & (1-\frac{2M}{r})^{-1} & 0 & 0 \\
+			0 & 0 & r^2 & 0 \\
+			0 & 0 & 0 & r^2\mathrm{sin}^2\theta 
+		\end{pmatrix}
 \end{equation}
-The Event Horizon is at 2 Schwarzschild radii!!!
+\noindent
+This geometry in independent of the time coordinate and has spherical symmetry for the spatial coordinates. There are therefore four Killing vectors associated with the system: one for the time coordinate and three for the spatial rotations around the Cartesian axes. The two relevant vectors for this derivation are $\xi^{\alpha} = (1,\vec{0})$ and $\eta^{\alpha} = (0,0,0,1)$, where the latter is associated with the invariance in the $\phi$ direction. The system can further be simplified letting the angle $\phi$ operate in the equatorial plane, i.e. setting $\theta = \pi/2$.\\
+For clarity we lable the invariant quantities associated with $\xi$ and $\eta$ as $e$ and $l$ respectively:
+\begin{equation}
+	-e = \xi \cdot \mathbf{u} = g_{tt}u^t = -\Big(1-\frac{2M}{r}\Big)\frac{\mathrm{d}t}{\mathrm{d}\tau}\
+	\label{eq:Econs}
+\end{equation}
+\begin{equation}
+	l = \eta \cdot \mathbf{u} = g_{\phi\phi}u^{\phi} = r^2\frac{\mathrm{d}\phi}{\mathrm{d}\tau}
+	\label{eq:Lcons}
+\end{equation}
+Note that $e$ represents the conserved total energy per unit rest mass and $l$ the conserved angular momentum (in the $\theta = \pi/2$ plane) per unit rest mass.\\
+\indent The behaviour of a test particle (of mass m) in this metric can best be understood in comparison with the Newtonian equation for the total energy for test mass rotating around a massive object:
+$$
+E_{\mathrm{tot}} = \frac{m}{2}\dot{r} + \frac{L^2}{2mR^2} - \frac{GMm}{r}
+$$
+Here the first term in the sum represents the linear kinetic energy and the second and third terms combine to form an effective potential. This same behaviour can be seen for the test particle in the Schwarzschild metric. Using the normalisation of the four-velocity ($\mathbf{u}\cdot\mathbf{u} = -1$) we find:
+$$
+-\Big(1-\frac{2M}{r}\Big)\Big(\frac{\mathrm{d}t}{\mathrm{d}\tau}\Big)^2 + -\Big(1-\frac{2M}{r}\Big)^{-1}\Big(\frac{\mathrm{d}r}{\mathrm{d}\tau}\Big)^2 + r^2\Big(\frac{\mathrm{d}\phi}{\mathrm{d}\tau}\Big)^2 = -1
+$$
+Combining with equations \ref{eq:Econs} and \ref{eq:Lcons}:
+$$
+-\Big(1-\frac{2M}{r}\Big)^{-1}e^2 + -\Big(1-\frac{2M}{r}\Big)\Big(\frac{\mathrm{d}r}{\mathrm{d}\tau}\Big)^2 + \frac{l^2}{r^2} = -1
+$$
+Which can now be rewritten in the same form as the Newtonian energy balance:
+\begin{equation}
+	\frac{1}{2}(e^2-1) = \frac{1}{2}\Big(\frac{\mathrm{d}r}{\mathrm{d}\tau}\Big)^2 + \Bigg(\frac{l^2}{2r^2}-\frac{M}{r}-\frac{Ml^2}{r^3}\Bigg)
+\end{equation}
+The effective potential has been changed, and it is the $r^{-3}$ term that introduces the ISCO, a feature not present in the Newtonian system. This can be seen by setting the derivative of the Schwarzschild effective potential (the collection of terms in parentheses) equal to zero:
+$$
+\frac{\mathrm{d}V_{eff}}{\mathrm{d}r} = \frac{M}{r^2} - \frac{l}{r^3} - \frac{3Ml^2}{r^{-4}} = 0 \rightarrow r_{\pm} = \frac{l^2}{2M}\Big(1\pm\sqrt{1-12\frac{M^2}{l^2}}\Big)
+$$
+This value is at an extremum when $\frac{l^2}{M^2} = 12$. Substituting this value into the equation, it follows that $r_{min} = 6M$. This is also the innermost radius for a stable circular orbit, as for all smaller values of r, the test mass would spiral inward. Converting from geometric to SI units we find:
+\begin{equation}
+	r_{\mathrm{ISCO}} = \frac{6GM}{c^2} = 3R_{\mathrm{Sch}}
+\end{equation}
+\end{framed}
+
 
 \noindent
-How much of the energy is coming from various Schwarzschild radii??
-3-5 or 3-10 $R_{\rm Sch}$ vs. 5-$\infty$ $R_{\rm Sch}$??\\
+The accretion disk therefore has a defined inner radius. The next question is which parts of the disk contribute most to the radiation. This can best be approached from a simple comparison of the changes is potential energy as a test mass falls radially inwards, from infinity to 5$R_\mathrm{Sch}$ and from 5$R_\mathrm{Sch}$ to 3$R_\mathrm{Sch}$. At these distances the Newtonian description is a good approximation.\\
+\indent Using the Newtonian 1/r potential and converting to units of $R_{\mathrm{Sch}}$, we find:
+\begin{equation}
+  \Delta E_{p} = G M m\Bigg(\frac{1}{R_{\mathrm{in}}} - \frac{1}{R_{\mathrm{out}}}\Bigg) = \frac{mc^2}{2}\Bigg(\frac{1}{R_{\mathrm{S,in}}} - \frac{1}{R_{S,\mathrm{out}}}\Bigg)
+\end{equation}
+The first thing to note is that the scaling (with radius) of the released energy in this system is independent of the mass of the black hole. The second is that most of the energy is released close to the black hole. The total energy released would be: $\Delta E_{p:\infty\rightarrow 5} = \frac{1}{10}mc^2$, and$\Delta E_{p:5\rightarrow 3} = \frac{1}{15}mc^2$. In the distance from 5$R_{\mathrm{Sch}}$ to 3$R_{\mathrm{Sch}}$, the particle would therefore gain and additional 2/3 of the energy it gained falling in from infinity to 5$R_{\mathrm{Sch}}$.\\
+\begin{framed}
+\noindent
+A comparison of the efficiency of black hole accretion with other energetic processes:\\
 
 \noindent
-$L = 4\pi \sigma  R^2 T^4$, so...
-\begin{equation}
-T = (L c^4) / \sigma \pi G^{2} 
-\end{equation}
-
+Assuming the test mass fall radially inward, all the way to the event horizon, the total amount of energy released is:
+$$
+\Delta E_p = \frac{mc^2}{2}
+$$
 \noindent
-Working this all through...
-\begin{equation}
-  L = 1.38\times10^{31} \, {\rm Watts} \, (M / M_{\odot})
-\end{equation}
-
-\noindent
-which with  $M_{\odot} = 2 \times 10^{30}$ kg is just 
-\begin{equation}
-  L = 6.37 M. 
-\end{equation}
-in S.I. units. 
-%% WTF!!! ;-)
-
-\begin{equation}
-  \Delta E_{p} = \frac{G M m}{R} 
-\end{equation}
-with $R=2GM/c^2$ gives
-\begin{equation}
-    \Delta E_{p} = \frac{mc^2}{2}
-\end{equation}
-but ``of course'' this wont go all into 'shining', turns into K.E., 
-and you need some friction... etc. etc. etc. :-) 
-But then divide by two for rotation and divide by 3 for LSO (last stable orbit). 
-ie. $\sim 1/12$ . 
-
+In words: half of the mass's rest energy would be converted into kinetic energy through this process. Of coerce the actual process is not quite this simple. For example, this mass does not radiate, it simply disappears into the black hole. Kinetic energy is converted into thermal energy through friction in the accretion disk. This is the source of (most of) the radiation that we can detect. The efficiency of this energy conversion is $\sim\frac{1}{2}$. In addition, as we have established above, the accretion disk only reaches inward to 3$R_{\mathrm{Sch}}$. Combining these factors, the final conversion of energy is $\sim$1/12 of the rest mass.\\
+Defining the energy gain:
 \begin{equation}
  E = \mu \Delta m c^{2} 
 \end{equation}
-and thus
-\begin{equation}
- L = \mu \Delta \dot{m} c^{2} 
-\end{equation}
+$\mu$ is 0.01\% for nuclear fission.\\
 $\mu$ is 0.7\% for nuclear fusion. \\
-$\mu$ is 10-40\% for grav. potential accretion.  \\
-And, $L$ for BHs doesn't depend on the mass of the BH (!!) \\
+$\mu$ is 10-40\% for grav. potential accretion.\\
+\end{framed}
 
-\noindent
-$L$ increases with \.m, upto the Eddington Luminosity. \\
-The luminosity itself cuts off itself the growth (in L). \\
-
-\noindent
-Use Wien's Displacement Law such that:\\
-$\lambda$  T = 2900 ($L$ in $\mu$m and T in K)\\
-$\Rightarrow$ if T = 100,000K then $\lambda=0.03\mu$m, \\
-i.e. and the EUV. \\
-(Note, a photon with 12.6 eV of energy has a wavelenght of 100nm.)
+\clearpage
+\noindent Having determined that most of the radiation originates from the accretion disk close to the black hole, the next step is to determine the basic properties of the spectrum for this source. The radiation is thermal in origin, we can assume the total luminosity is related to the temperature via Stefan-Boltzmann's law:
+\begin{equation}
+	L = 4\pi \sigma  R^2 T^4 \Rightarrow T = \Big(\frac{L}{4\pi\sigma \pi R^{2}}\Big)^{\frac{1}{4}}
+	\label{eq:SB}
+\end{equation}
+Assume the black hole accretes at the Eddington limit:
+\begin{equation}
+	L_E = \frac{4\pi G c m_p}{\sigma_e} M
+	\label{eq:LE}
+\end{equation}
+Here $m_p$ is the proton mass and $\sigma_e$ is the Thomson cross section. In terms of solar mass $L_E = 1.38\times10^{31} \, {\rm W} \, (M / M_{\odot})$. When converting to SI units, we find that $L_E = 6.37M$. This perhaps seems quite low, but is still much greater than any other known process.\\
+We next insert \ref{eq:LE} into \ref{eq:SB}, to find:
+\begin{equation}
+	T = \Bigg(\frac{L}{L_E}\frac{R}{R_{\mathrm{Sch}}}\Bigg)^{\frac{1}{4}}\Bigg(\frac{c^5 m_p}{4GM\sigma_e \sigma}\Bigg)^{\frac{1}{4}}
+\end{equation}
+The first term contains dimensionless scaling factors and the second term has unit of Kelvin, as required. Note that $T\propto L^{\frac{1}{4}}R^{-\frac{1}{2}}M^{-\frac{1}{4}}$, which means (assuming $L\propto M$) that $T \propto M^{-\frac{1}{2}}$.\\
+\indent We can further rewrite to astronomical units, collecting all the constants into a numerical term:
+\begin{equation}
+	T \approx 3.8\cdot 10^7 \Big(\frac{L}{L_E}\Big)^{\frac{1}{4}}\Big(\frac{M}{M_{\odot}}\Big)^{-\frac{1}{4}}\Big(\frac{R}{R_{\mathrm{Sch}}}\Big)^{\frac{1}{2}}
+	\label{eq:T_astro}
+\end{equation}
+The final step is to link this temperature to a black body spectrum, using Wien's displacement law. Wien's law is given by:
+\begin{subequations}
+	\begin{align}
+		\lambda_{\mathrm{max}}T &\approx 2.897\cdot 10^6 \hspace{2mm} (\lambda \text{ in nm})\\
+		\lambda_{\mathrm{max}}T &\approx 2900 \hspace{2mm} (\lambda \text{ in $\mu$m})
+	\end{align}
+	\label{eq:Wien}
+\end{subequations}
+Combining Wien's law with equation \ref{eq:T_astro}, we find a peak in the SED at the following wavelength (in nm):
+\begin{equation}
+	\lambda_{\mathrm{max,AGN}} \approx 7.7\cdot 10^{-2}\Big(\frac{L}{L_E}\Big)^{-\frac{1}{4}}\Big(\frac{M}{M_{\odot}}\Big)^{\frac{1}{4}}\Big(\frac{R}{R_{\mathrm{Sch}}}\Big)^{-\frac{1}{2}}
+	\label{eq:l_max}
+\end{equation}
+We can now combine these expression with values for L, M and R that are appropriate for AGN. Using $L=L_E$, $R=5R_{\mathrm{Sch}}$ and $M=10^8 M_{\odot}$:
+$$
+T \approx 1.7\cdot 10^5 \mathrm{K} \hspace{5mm} \& \hspace{5mm} \lambda_{\mathrm{max}} \approx 17 \mathrm{nm}
+$$
 %% https://en.wikipedia.org/wiki/Electronvolt
-So, you can expect the peak to be at $\sim300$\AA. 
+A useful conversion to keep in mind is that a wavelength of 1.2 nm corresponds to a 1 keV photon. The spectrum we find should therefore peak in the EUV. This corresponds well with observed AGN spectra. Note that equation \ref{eq:l_max} implies that more massive sources will also have a redder spectrum. This is why solar mass black holes in binary systems become X-ray sources, whereas SMBHs are strongest in the EUV.\\
 
 \noindent
-However, we see the turnover at $\sim1000$\AA, 
-a little cooler than we'd expect... Why??!!
+Given the match between estimated and observed spectra, it is possible to conclude that the basic assumptions going into this derivation (black hole accretion as the engine, emission from the inside of the accretion disk and thermal radiation from the disk as the origin for the largest peak in the spectrum) are correct. It should be noted, however, that the real peak of the average AGN spectrum has a its turnover around 100nm, which corresponds to a lower black body temperature. There are therefore clearly additional processes at work.\\
+
+\noindent
+The luminosity of the system increases with $\dot{M}$, the accretion rate. This scaling is halted by the Eddington limit: the more mass is accreted (and loses energy through radiation), the more luminous the inner regions around the black hole become. As the the Eddington limit scales with the mass of the black hole, more massive black holes will have a higher total luminosity. 
 
 
-
+\clearpage
 \section{Resources}
 Classic References:\\
 \citet{SS73} (and \citet{King09}) \\
@@ -124,7 +184,7 @@ https://andyxl.wordpress.com/2011/03/03/a-dim-glimmer/\\
 
 
 \bibliographystyle{mn2e}
-\bibliography{/cos_pc19a_npr/LaTeX/tester_mnras}
+\bibliography{tester_mnras}
 
 \end{document}
 
