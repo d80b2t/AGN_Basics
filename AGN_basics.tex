@@ -26,6 +26,7 @@ From discussions with Andy L. and David H.}
 
 
 \section{Where's the energy coming from??}
+\label{sec:energy}
 Quasars are visible across the EM spectrum, and the distribution of their energy output across the spectrum provides information about the type of processes fueling these sources. For example, the energy output in the radio frequency range is low, relative to the rest of the SED. For comparison: very bright radio sources have flux densities of $\sim$1 Jansky, whereas an iPhone 6 has an RF output of $\sim$30 dBm (at 824.2 - 848.8MHz and 1850.2 - 1909.8MHz) where a dBm is a decibel-milliwatt. This corresponds to a power of 1.0 Watt\footnote{https://en.wikipedia.org/wiki/DBm}. So placing an iPhone on the Moon would give it a radio flux (using an average distance $d \approx 3.85 \cdot 10^8$m and a total bandwidth of 82.2 MHz)  of:
 $$
 F = \frac{P}{4\pi d^2}\frac{1}{82.2\cdot 10^6} \approx 6.53 \cdot 10^{-27}\frac{\mathrm{W}}{\mathrm{m}^{2}\mathrm{Hz}} \approx 0.6 \mathrm{Jy}
@@ -100,12 +101,12 @@ The first thing to note is that the scaling (with radius) of the released energy
 A comparison of the efficiency of black hole accretion with other energetic processes:\\
 
 \noindent
-Assuming the test mass fall radially inward, all the way to the event horizon, the total amount of energy released is:
+Assuming the test mass falls radially inward, all the way to the event horizon, the total amount of energy released is:
 $$
 \Delta E_p = \frac{mc^2}{2}
 $$
 \noindent
-In words: half of the mass's rest energy would be converted into kinetic energy through this process. Of coerce the actual process is not quite this simple. For example, this mass does not radiate, it simply disappears into the black hole. Kinetic energy is converted into thermal energy through friction in the accretion disk. This is the source of (most of) the radiation that we can detect. The efficiency of this energy conversion is $\sim\frac{1}{2}$. In addition, as we have established above, the accretion disk only reaches inward to 3$R_{\mathrm{Sch}}$. Combining these factors, the final conversion of energy is $\sim$1/12 of the rest mass.\\
+In words: half of the mass's rest energy would be converted into kinetic energy through this process. Of course the actual process is not quite this simple. For example, this mass does not radiate, it simply disappears into the black hole. Kinetic energy is converted into thermal energy through friction in the accretion disk. This is the source of (most of) the radiation that we can detect. The efficiency of this energy conversion is $\sim\frac{1}{2}$. In addition, as we have established above, the accretion disk only reaches inward to 3$R_{\mathrm{Sch}}$. Combining these factors, the final conversion of energy is $\sim$1/12 of the rest mass.\\
 Defining the energy gain:
 \begin{equation}
  E = \mu \Delta m c^{2} 
@@ -129,22 +130,19 @@ Assume the black hole accretes at the Eddington limit:
 Here $m_p$ is the proton mass and $\sigma_e$ is the Thomson cross section. In terms of solar mass $L_E = 1.38\times10^{31} \, {\rm W} \, (M / M_{\odot})$. When converting to SI units, we find that $L_E = 6.37M$. This perhaps seems quite low, but is still much greater than any other known process.\\
 We next insert \ref{eq:LE} into \ref{eq:SB}, to find:
 \begin{equation}
-	T = \Bigg(\frac{L}{L_E}\frac{R}{R_{\mathrm{Sch}}}\Bigg)^{\frac{1}{4}}\Bigg(\frac{c^5 m_p}{4GM\sigma_e \sigma}\Bigg)^{\frac{1}{4}}
+	T = \Bigg(\frac{L}{L_E}\Big(\frac{R}{R_{\mathrm{Sch}}}\Big)^{-2}\Bigg)^{\frac{1}{4}}\Bigg(\frac{c^5 m_p}{4GM\sigma_e \sigma}\Bigg)^{\frac{1}{4}}
 \end{equation}
-The first term contains dimensionless scaling factors and the second term has unit of Kelvin, as required. Note that $T\propto L^{\frac{1}{4}}R^{-\frac{1}{2}}M^{-\frac{1}{4}}$, which means (assuming $L\propto M$) that $T \propto M^{-\frac{1}{2}}$.\\
+The first term contains dimensionless scaling factors and the second term has unit Kelvin, as required. Note that $T\propto L^{\frac{1}{4}}R^{-\frac{1}{2}}M^{-\frac{1}{4}}$, which means (assuming $L\propto M$) that $T \propto M^{-\frac{1}{2}}$.\\
 \indent We can further rewrite to astronomical units, collecting all the constants into a numerical term:
 \begin{equation}
-	T \approx 3.8\cdot 10^7 \Big(\frac{L}{L_E}\Big)^{\frac{1}{4}}\Big(\frac{M}{M_{\odot}}\Big)^{-\frac{1}{4}}\Big(\frac{R}{R_{\mathrm{Sch}}}\Big)^{\frac{1}{2}}
+	T \approx 3.8\cdot 10^7 \Big(\frac{L}{L_E}\Big)^{\frac{1}{4}}\Big(\frac{M}{M_{\odot}}\Big)^{-\frac{1}{4}}\Big(\frac{R}{R_{\mathrm{Sch}}}\Big)^{-\frac{1}{2}}
 	\label{eq:T_astro}
 \end{equation}
 The final step is to link this temperature to a black body spectrum, using Wien's displacement law. Wien's law is given by:
-\begin{subequations}
-	\begin{align}
-		\lambda_{\mathrm{max}}T &\approx 2.897\cdot 10^6 \hspace{2mm} (\lambda \text{ in nm})\\
-		\lambda_{\mathrm{max}}T &\approx 2900 \hspace{2mm} (\lambda \text{ in $\mu$m})
-	\end{align}
+\begin{equation}
+	\lambda_{\mathrm{max}}T \approx 2900 \hspace{1mm} \mu\mathrm{m}\cdot\mathrm{K}
 	\label{eq:Wien}
-\end{subequations}
+\end{equation}
 Combining Wien's law with equation \ref{eq:T_astro}, we find a peak in the SED at the following wavelength (in nm):
 \begin{equation}
 	\lambda_{\mathrm{max,AGN}} \approx 7.7\cdot 10^{-2}\Big(\frac{L}{L_E}\Big)^{-\frac{1}{4}}\Big(\frac{M}{M_{\odot}}\Big)^{\frac{1}{4}}\Big(\frac{R}{R_{\mathrm{Sch}}}\Big)^{-\frac{1}{2}}
@@ -161,97 +159,85 @@ A useful conversion to keep in mind is that a wavelength of 1.2 nm corresponds t
 Given the match between estimated and observed spectra, it is possible to conclude that the basic assumptions going into this derivation (black hole accretion as the engine, emission from the inside of the accretion disk and thermal radiation from the disk as the origin for the largest peak in the spectrum) are correct. It should be noted, however, that the real peak of the average AGN spectrum has a its turnover around 100nm, which corresponds to a lower black body temperature. There are therefore clearly additional processes at work.\\
 
 \noindent
-The luminosity of the system increases with $\dot{M}$, the accretion rate. This scaling is halted by the Eddington limit: the more mass is accreted (and loses energy through radiation), the more luminous the inner regions around the black hole become. As the the Eddington limit scales with the mass of the black hole, more massive black holes will have a higher total luminosity. 
+The luminosity of the system increases with $\dot{M}$, the accretion rate. This scaling is halted by the Eddington limit: the more mass is accreted (and loses energy through radiation), the more luminous the inner regions around the black hole become. As the Eddington limit scales with the mass of the black hole, more massive black holes will have a higher total luminosity. 
 
 
 \clearpage
-\section{DISCS}
-Frank, King and Raine book.... 
-(Cambridge) 
+\section{Disks}
+\label{sec:disks}
+\noindent
+The assumption of spherical accretion, as described for the Eddington limit in the previous section, presents serious problems for our understanding of accreting matter as the source of AGN luminosity. The first issue is that the matter simply falls radially inward: the potential energy is converted into kinetic energy, but the matter disappears into the black hole. What is required is a process to convert at least part of the change in potential energy into radiation. The second problem is that even if this process were available for spherical accretion, the created radiation would be absorbed by other infalling matter. For the accretion rates required to power the luminosity we see, the shells of infalling matter are optically thick. Because they fall in so rapidly, the energy therefore will be carried into the black hole before it has time to cross the accretion region in a process of absorption and re-emission. Spherical accretion is therefore an advective system.\\
+\indent We therefore *need* a disk of accreting matter, in which transfer of angular momentum and energy loss due to friction allow the potential energy to be turned into heat. The heated disk will then radiate as a black body, providing the source of the observed luminosity. The most important reference for this topic is the textbook by Frank, King and Raine (Cambridge, 2002).\\
 
-\subsection{Velocities...}
-$V = \sqrt\frac{GM}{r}$\\
-$V_{\rm Rs} = \sqrt\frac{c^{2}}{2X}$\\
-where $X$=
+\subsection{Velocities}
+The orbital velocities, assuming spherical orbits at all radii, can be quite high close to the black hole. Rewriting the expression for the velocity, $v = \sqrt\frac{GM}{R}$, to include the radius in $R_S$, we find:
+\begin{equation}
+v_{\rm Rs} = \sqrt\frac{c^2}{2}\Big(\frac{R}{R_S}\Big)^{-\frac{1}{2}}
+\end{equation}
+At the Schwarzschild ISCO of 3$R_S$, the speed will be approximately $1.2\cdot10^9$ m/s, a significant fraction of the speed of light. We can relate this speed to the time it takes to complete one revolution, which defines a characteristic time scale for the disk (at a given radius):
+\begin{equation}
+t_{rev} = \frac{2\pi R}{v} = 2\pi\sqrt{\frac{R^3}{GM}} = \frac{4\sqrt{2}\pi GM}{c^3}\Bigg(\frac{R}{R_S}\Bigg)^{\frac{3}{2}}
+\end{equation}
+Evaluating this at 3$R_S$ for a $10^8 M_{\odot}$ black hole, we find $t_{rev} \approx 5.2$ days.
+
+\subsection{From Potential to Heat}
+If we assume for simplicity that the black hole accretes at the Eddington limit, we relate the luminosity to the accretion rate via the efficiency, $\epsilon$, at which the rest mass of the particle (located at infinite radius), is converted into radiation:
+\begin{equation}
+	L = \epsilon \dot{M} c^{2} = 6.37 M \Rightarrow \dot{M} = \frac{6.37}{\epsilon c^2}M
+	\label{eq:mdot}
+\end{equation}
+For a $10^8 M_{\odot}$ black hole and an efficiency of approximately 10\%: $$\dot{M} \approx 1.2\cdot10^{23} \mathrm{kg/s} \sim M_{\odot}/\mathrm{year}$$
 
 \noindent
-$t = 2\pi t / v = \frac{ r^{3/2}} {G. M^{1/2}} . 2\pi    ) $ 
-%% Hmmm.... NPR not sure he's got this right!!!
+The energy to heat the accretion disk comes from the difference in total energy for a mass between two (circular) orbits. For a single orbit the energy can be expressed as follows:
+\begin{subequations}
+	\begin{align}
+		E_p &= -\frac{GMm}{r}\\
+		E_k &= \frac{mv^2}{2} = \frac{GMm}{2r}\\
+		E_{\rm tot} &= E_p + E_k = -\frac{GMm}{2r}
+	\end{align}
+\end{subequations}
+The potential and total energies are negative because this concerns a bound state. We can now consider the change in these energies as a mass moves radially over a distance $\Delta r$ (note that $\Delta r<0$ for inward motion):
+\begin{subequations}
+	\begin{align}
+		\Delta E_p &= \frac{\partial E_p}{\partial r} \Delta r = \frac{GMm}{r^2} \Delta r\\
+		\Delta E_k &= \frac{\partial E_k}{\partial r} \Delta r = -\frac{GMm}{2r^2}\Delta r\\
+		\Delta E_{\rm tot} &= \Delta E_p + \Delta E_k = \frac{GMm}{2r^2} \Delta r
+	\end{align}
+	\label{eq:DelE}
+\end{subequations}
+The first thing to remark about these results is the simple conclusion that transition between orbital `states' are impossible without changing the total energy of the system. For a mass moving inward through the accretion disk, the energy must decrease. This is facilitated by friction. The second point is that out of the available potential energy at a higher radius, half will go into the increased kinetic energy at the lower radius, leaving the other half available for heating the disk (this is the origin of the factor 1/2 that was introduced in the accretion efficiency estimate in section \ref{sec:energy}).\\
+In addition to a change in energy, a mass must also change its angular momentum. For circular motion:
+\begin{equation}
+	\mathcal{L} = mvr = m\sqrt{GMr}
+\end{equation}
+The angular momentum scales as $r^{1/2}$, which means a particle moving inward must lose angular momentum. Friction again provides this transfer. Consider the disk as a collection of rings, each circling at its own velocity. The for any pair of annuli, the inner ring moves faster than the outer; friction at the boundary between the rings causes the rings to exert a drag force on each other. The outer ring slows the inner ring down by reducing the momentum of its constituent particles, allowing them to move inward.\\
+
+\subsection{Temperature}
+\noindent
+Using the result from equation \ref{eq:DelE}, we can make an estimate of the radial temperature profile of the accretion disk. We will assume it radiates as a perfect black body, as we did for the derivation in equation \ref{eq:SB}. Divide the ring into annuli, of width $\Delta r$. The luminosity of each ring is given by:
+\begin{equation}
+ 4 \pi (r \Delta r)\sigma T^{4}  = L(r) \Delta r = \frac{GM\dot{m} }{2r^2} \Delta r.
+\end{equation}
+Solving for T we find:
+\begin{equation}
+	T =  \Big(\frac{GM\dot{m}}{8 \pi \sigma r^{3}} \Big)^{1/4} \Rightarrow T = \Big(\frac{c^6\dot{m}}{64 \pi \sigma G^2 M^2} \Big)^{1/4} \Big(\frac{R}{R_S}\Big)^{-\frac{3}{4}}
+	\label{eq:T_r1}
+\end{equation}
+Note especially the result that T$\sim r^{-3/4}$. It is possible to simplify this expression further by assuming $\dot{m}$ is the Eddington accretion limit from equation \ref{eq:mdot}:
+\begin{equation}
+	T \approx 4.53\cdot 10^7 \Big(\frac{M}{M_{\odot}}\Big)^{-\frac{1}{4}}\Big(\frac{R}{R_S}\Big)^{-\frac{3}{4}} \mathrm{K}
+	\label{eq:T_r2}
+\end{equation}
+\noindent
+Evaluating equation \ref{eq:T_r2} for a $10^8 M_{\odot}$ black hole at 3$R_S$, and using Wien's law (equation \ref{eq:Wien}):
+$$T(3R_S) \approx 2\cdot 10^5 \mathrm{K} \Rightarrow \lambda_{\mathrm{max}} \approx 15 \mathrm{nm}$$
+Again we find that the radiation for a black hole of this size peaks in the UV range. This is for the black body spectrum close to the black hole, where we expect the temperature to be the highest. As noted in section \ref{sec:energy}, this is also expected to be the brightest region. Comparing this to the peak for the 3$R_S$ region for a 1 $M_{\odot}$ black hole:
+$$T(3R_S) \approx 2\cdot 10^7 \mathrm{K} \Rightarrow \lambda_{\mathrm{max}} \approx 0.15 \mathrm{nm}$$
+The latter wavelength corresponds to approximately 8.5 keV. This corresponds with our earlier estimate that a solar mass black hole accreting at the Eddington limit should be brightest in X-rays.\\
 
 \noindent
-The famous problem with spherical accretion... 
-All the energy you gain, simply swallowed into BH... \\ 
-
-\noindent
-Thus you *need* a disk, ang. momentum transfer/loss, friction, 
-and to slow things down....\\
-
-
-\subsection{Eddington Limits...}
-
-\noindent
-$L = \epsilon \dot{m} c^{2} = 6.37 M$ \\
-
-\noindent
-$\dot{M} = 6.37 M / \epsilon c^{2} = 6.37 / 9.\times10^{15} M $
-where $M$ is 10$^{8} M_{\odot}$ ....
-$\Rightarrow 2e10^{23}$ kg/s, 
-$\sim$a solar mass per year...
-
-\begin{equation}
-E_p = GMr / r
-\end{equation}
-
-\begin{equation}
-E_k = mv^{2} / 2 = GMm/ r^2
-\end{equation}
-
-$\Rightarrow$
-
-\begin{equation}
-E_{\rm tot} = - GMm / 2e
-\end{equation}
-
-\begin{equation}
-\Delta E_P  = \Delta v \frac{dE}{dr} = GMm/r^2 \Delta r
-\end{equation}
-
-\begin{equation}
-\Delta E_K   = GMm/2r^2 \Delta r
-\end{equation}
-
-
-\subsection{Viscosity}
-
-\begin{equation}
-  \Delta r L(r) = \frac{GM\dot{m} }{2r^2} \Delta r
-\end{equation}
-
-\begin{equation}
-4 \pi r \sigma T^{4} = GM\dot{m} / 2 r^2
-\end{equation}
-$\Rightarrow$
-\begin{equation}
- T =  \lbrack \frac{GM\dot{m}}{8 \pi \sigma r^{3}} \rbrack^{1/4}
-\end{equation}
-T$\sim R^{-3/4}$
-
-\begin{equation}
-  T_{3 Rs} = \lbrack c^{6} \dot{m} / 64 \pi \sigma G^{2} M^{2} \rbrack^{1/4}
-\end{equation}
-1 $M_\odot$ at the Eddington Limit for 10$^{8}$ $M_\odot$ BH is... K
-(UV sources)\\
-
-\noindent
-1 $M_\odot$ at the Eddington Limit for 1 $M_\odot$ BH is 10 million K
-(double check!!! X-ray sources)\\
-
-\noindent
-And then, there {\it should be...} this $\nu^{1/3}$ spectrum in log
-$L_{\nu}$ vs. log $\nu$
-but we see $\nu^{0}$... 
-but see \citet[e.g.][]{Kishimoto08} :-) \\
-
+The full spectrum of the radiation coming from the disk will be a composite of the black body spectra of all the annuli. This composite spectrum is expected to have a $\nu^{1/3}$ dependency, which would correspond to a sloped straight line in a log$L_{\nu}$ vs. log $\nu$ plot. However, the detected spectrum more closely resembles $\nu^0$. This phenomenon is discussed in \citet[e.g.][]{Kishimoto08} TBD\\
 
 
 \clearpage
